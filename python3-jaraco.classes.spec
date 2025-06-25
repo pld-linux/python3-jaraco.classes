@@ -78,10 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %py3_install_pyproject
 
-# packaged in python3-jaraco.spec
-%{__rm} $RPM_BUILD_ROOT%{py3_sitescriptdir}/jaraco/__init__.py
-%{__rm} $RPM_BUILD_ROOT%{py3_sitescriptdir}/jaraco/__pycache__/__init__.*.py*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -89,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE NEWS.rst README.rst SECURITY.md
 %{py3_sitescriptdir}/jaraco/classes
-%{py3_sitescriptdir}/jaraco.classes-%{version}-py*.egg-info
+%{py3_sitescriptdir}/jaraco_classes-%{version}.dist-info
 
 %if %{with doc}
 %files apidocs
